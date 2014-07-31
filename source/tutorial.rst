@@ -555,7 +555,9 @@ First, register your package on PyPI:
 
   python setup.py register
 
-The wizard will ask for your PyPI username and password (or let you create an account). A .pypirc file will be created in your home folder.
+The wizard will ask for your PyPI username and password (or let you create an
+account). You will also be prompted to create a release password. A .pypirc
+file will be created in your home folder.
 
 Now upload your distributions
 
@@ -563,11 +565,26 @@ Now upload your distributions
 
   python setup.py sdist bdist_wheel upload
 
+You will be prompted for your release password.
+
 This can also be done with :ref:`twine`
 
 ::
 
  twine upload dist/*
+
+
+The Update Framework
+--------------------
+
+Your release password is used to create a private, offline key which authenticates
+your releases using `TUF <http://theupdateframework.com/>`_. The key will be
+stored with your local package source, and should never be shared online.
+
+By default, your whole package is governed by this one key. For a large package
+with many contributors, you may want to use the `TUF developer tool
+<https://github.com/theupdateframework/tuf/blob/develop/tuf/README-developer-tools.md>`_
+to manage release permissions for several offline keys.
 
 
 ----
