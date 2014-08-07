@@ -559,9 +559,9 @@ The wizard will ask for your PyPI username and password (or let you create an
 account). Your credentials will be stored in a .pypirc file in your home folder.
 
 You will also be prompted to enter a password for a private key, which will be
-generated. This key will be used to automatically sign your package with `TUF
-<http://theupdateframework.com/>`_ whenever you upload a release. It will be
-stored in your home directory under .tufpypi, and should never be shared online.
+generated and encrypted. This key will be used to automatically sign your package
+with `TUF <http://theupdateframework.com/>`_ whenever you upload a release. It
+will be stored in your home directory under .tufpypi.
 
 Now upload your distributions
 
