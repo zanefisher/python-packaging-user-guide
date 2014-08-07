@@ -581,13 +581,13 @@ This can also be done with :ref:`twine`
 Signing Packages with Several Maintainers
 -----------------------------------------
 
-By default, your whole package is governed by the single private key that is
-created when you register your package. This is not ideal for packages with
-several maintainers, since they would have to share the private key. Instead,
-you may want to use the `TUF developer tool
+By default, your whole package is governed by the private key that is
+created when you register the package. In order to allow other maintainers to make
+releases, you can simply share this key with them. Alternatively, you can use
+the `TUF developer tool
 <https://github.com/theupdateframework/tuf/blob/develop/tuf/README-developer-tools.md>`_
 to give other maintainers permission to release some or all parts of your
-package using their own keys, rather than sharing yours.
+package using their own keys, rather than sharing the project key.
 
 
 ----
