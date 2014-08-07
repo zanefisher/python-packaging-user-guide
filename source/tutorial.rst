@@ -556,14 +556,12 @@ First, register your package on PyPI:
   python setup.py register
 
 The wizard will ask for your PyPI username and password (or let you create an
-account).
+account). Your credentials will be stored in a .pypirc file in your home folder.
 
-You will also be prompted to create a password for a private key. This key will
-be used to authenticate your package with `TUF <http://theupdateframework.com/>`_
-whenever you upload a release. It will be stored with your local package source,
-and should never be shared online.
-
-A .pypirc file will be created in your home folder.
+You will also be prompted to enter a password for a private key, which will be
+generated. This key will be used to automatically sign your package with `TUF
+<http://theupdateframework.com/>`_ whenever you upload a release. It will be
+stored in your home directory under .tufpypi, and should never be shared online.
 
 Now upload your distributions
 
@@ -580,15 +578,16 @@ This can also be done with :ref:`twine`
  twine upload dist/*
 
 
-Release Permissions
--------------------
+Signing Packages with Several Maintainers
+-----------------------------------------
 
-By default, your whole package is governed by the single key that is created
-when you register your package. For a large package with many contributors,
+By default, your whole package is governed by the single private key that is
+created when you register your package. This is not ideal for packages with
+several maintainers, since they would have to share the private key. Instead,
 you may want to use the `TUF developer tool
 <https://github.com/theupdateframework/tuf/blob/develop/tuf/README-developer-tools.md>`_
-to give other contributors permission to release some or all parts of your package
-using their own keys, rather than sharing yours.
+to give other maintainers permission to release some or all parts of your
+package using their own keys, rather than sharing yours.
 
 
 ----
